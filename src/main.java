@@ -4,29 +4,35 @@ import java.sql.*;
 public class main {
     public static void main(String[] args) {
         //Video used to connect DB to Java App: https://youtu.be/AHFBPxWebFQ?si=UMsBsKxpAOizz-9S
-    }
 
-    String url="jdbc:mysql://localhost:3306/jdbcdemo";
-    String username="root";
-    String password="";
+        //Xampp localhost URL for DB
+        String url="jdbc:mysql://localhost:3306/jdbcdemo";
 
-    try {
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        //Username details
+        String username="root";
+        String password="";
 
-        Connection connection = DriverManager.getConnection(url, username, password);
+        //Error catching
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
-        Statement statement = connection.createStatement();
+            Connection connection = DriverManager.getConnection(url, username, password);
 
-        ResultSet resultSet = statement.executeQuery("select * from table");
+            Statement statement = connection.createStatement();
 
-        while (resultSet.next()) {
-            System.out.println(resultSet.getInt(1) + " " + resultSet.getString(2) + resultSet.getDouble(3));
+            ResultSet resultSet = statement.executeQuery("select * from table");
+
+            //Constructing
+            while (resultSet.next()) {
+                System.out.println(resultSet.getInt(1) + " " + resultSet.getString(2) + resultSet.getDouble(3));
+            }
+
+            connection.close();
         }
 
-        connection.close();
-    }
-
-    catch (Exception e) {
-        System.out.println(e);
+        //Exception handling if error
+        catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }
