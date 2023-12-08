@@ -5,6 +5,40 @@
 
 -- Insert Bands
 -- TODO
+INSERT INTO Company (CompanyName) VALUES ('JYP Entertainment');
+SET @lastCompanyID = LAST_INSERT_ID();
+--Band 1
+INSERT INTO Band (BandName) VALUES ('Stray Kids');
+SET @lastBandID = LAST_INSERT_ID();
+INSERT INTO CompanyBand (CompanyID, BandID) VALUES (@lastCompanyID, @lastBandID);
+
+INSERT INTO Member (MemberName, Birthday, StageName) VALUES ('Felix', '2000-09-15', NULL);
+SET @lastMemberID = LAST_INSERT_ID();
+INSERT INTO BandMember (BandID, MemberID) VALUES (@lastBandID, @lastMemberID);
+
+INSERT INTO Album (AlbumName, ReleaseDate) VALUES ('MAXIDENT', '2022-05-27');
+SET @lastAlbumID = LAST_INSERT_ID();
+INSERT INTO BandAlbum(BandID, AlbumID) VALUES (@lastBandID, @lastAlbumID);
+
+INSERT INTO Song (SongName, SongLength) VALUES ('Hellevator(MixTape)', 239);
+SET @lastSongID = LAST_INSERT_ID();
+INSERT INTO AlbumSong(AlbumID, SongID) VALUES (@lastAlbumID, @lastSongID);
+--Band 2(Change this info)
+INSERT INTO Band (BandName) VALUES ('Stray Kids');
+SET @lastBandID = LAST_INSERT_ID();
+INSERT INTO CompanyBand (CompanyID, BandID) VALUES (@lastCompanyID, @lastBandID);
+
+INSERT INTO Member (MemberName, Birthday, StageName) VALUES ('Felix', '2000-09-15', NULL);
+SET @lastMemberID = LAST_INSERT_ID();
+INSERT INTO BandMember (BandID, MemberID) VALUES (@lastBandID, @lastMemberID);
+
+INSERT INTO Album (AlbumName, ReleaseDate) VALUES ('MAXIDENT', '2022-05-27');
+SET @lastAlbumID = LAST_INSERT_ID();
+INSERT INTO BandAlbum(BandID, AlbumID) VALUES (@lastBandID, @lastAlbumID);
+
+INSERT INTO Song (SongName, SongLength) VALUES ('Hellevator(MixTape)', 239);
+SET @lastSongID = LAST_INSERT_ID();
+INSERT INTO AlbumSong(AlbumID, SongID) VALUES (@lastAlbumID, @lastSongID);
 
 -- Insert Albums
 -- TODO
