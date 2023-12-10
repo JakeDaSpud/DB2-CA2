@@ -8,7 +8,7 @@ public class main {
 
         try{
             //Xampp localhost URL for DB
-            String local_DB_URL = "jdbc:mysql://localhost:3306/KPop_Database_CA2";
+            String local_DB_URL = "jdbc:mysql://localhost:3306/kpop_database_ca2";
 
             //User Login Details
             String username = "root";
@@ -20,6 +20,7 @@ public class main {
             System.out.println("WHERE DOES THIS PRINT");
             Statement statement = connection.createStatement();
             System.out.println("does it work or nah");
+            //String sql = "INSERT INTO Company (CompanyName) VALUES ('JYP Entertainment');";
             String sql = "INSERT INTO Company (CompanyName) VALUES ('JYP Entertainment');";
             statement.executeUpdate(sql);
 

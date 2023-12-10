@@ -12,7 +12,7 @@ CREATE TABLE Company (
     CompanyID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     CompanyName VARCHAR(255),
     CEOName VARCHAR(255),
-    WorthOrAnnualIncome DECIMAL(10, 2),
+    WorthOrAnnualIncome DECIMAL,
     StartDate DATE
 );
 
